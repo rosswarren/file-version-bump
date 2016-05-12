@@ -2,6 +2,16 @@
 
 `file-version-bump` is an NPM module that works with the built in `npm version` command to update semver version numbers in files other than `package.json`. This all conveniently configured in your `package.json`.
 
+
+## Usage
+Use the standard `npm version` comands. For example:
+
+```sh
+npm version patch
+```
+
+[See here for more info](https://docs.npmjs.com/cli/version).
+
 ## Installation
 
 It is advised to install `file-version-bump` as a `devDependencies` in your `package.json`, as you will only need this for development purposes. To install this module, simply run:
