@@ -6,7 +6,7 @@
 
 
 ## Usage
-Use the standard `npm version` comands. For example:
+Use the standard `npm version` commands. For example:
 
 ```sh
 npm version patch
