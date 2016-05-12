@@ -1,5 +1,7 @@
 # File Version Bump
 
+[![npm version](https://img.shields.io/npm/v/file-version-bump.svg?style=flat-square)](https://www.npmjs.com/package/file-version-bump)
+
 `file-version-bump` is an NPM module that works with the built in `npm version` command to update semver version numbers in files other than `package.json`. This all conveniently configured in your `package.json`.
 
 
