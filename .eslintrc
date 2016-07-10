@@ -3,7 +3,9 @@
     "rules": {
         "comma-dangle": [2, "never"],
         "space-before-function-paren": [2, "never"],
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": true}]
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": true}],
+        "no-console": 0,
+        "func-names": 0
     },
     "env": {
         "mocha": true
