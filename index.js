@@ -28,30 +28,30 @@ function processGlobString(globString) {
       console.log(`found file ${filePath}`);
 
       return () => P.promisify(fs.readFile)(
-                path.join(process.cwd(), filePath),
-                'utf8'
-            ).then(fileContents => {
-              fileContents.match(semverRegex).forEach(match => {
-                console.log(`${match} ==> ${packageJSON.version}`);
-              });
+        path.join(process.cwd(), filePath),
+        'utf8'
+      ).then(fileContents => {
+        fileContents.match(semverRegex).forEach(match => {
+          console.log(`${match} ==> ${packageJSON.version}`);
+        });
 
-              return P.promisify(fs.writeFile)(
-                    path.join(process.cwd(), filePath),
-                    fileContents.replace(semverRegex, packageJSON.version)
-                ).then(() => runGitAdd(filePath));
-            }).catch(err => {
-              console.log(err);
-            });
+        return P.promisify(fs.writeFile)(
+          path.join(process.cwd(), filePath),
+          fileContents.replace(semverRegex, packageJSON.version)
+        ).then(() => runGitAdd(filePath));
+      }).catch(err => {
+        console.log(err);
+      });
     }));
   });
 }
 
 if (!Array.isArray(fileBumpConfig)) {
   console.log(`
-        No file-version-bump config found.
-        Please add to your package.json.
-        See XXX for examples.
-    `);
+    No file-version-bump config found.
+    Please add to your package.json.
+    See XXX for examples.
+  `);
 } else {
   P.series(fileBumpConfig.map(globString => () => {
     console.log(`- Glob is ${globString}`);
