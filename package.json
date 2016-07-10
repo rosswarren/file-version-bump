@@ -1,6 +1,6 @@
 {
   "name": "file-version-bump",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bump versions in any file with the standard NPM version command",
   "main": "index.js",
   "bin": "index.js",
