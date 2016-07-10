@@ -50,7 +50,7 @@ if (!Array.isArray(fileBumpConfig)) {
   console.log(`
     No file-version-bump config found.
     Please add to your package.json.
-    See XXX for examples.
+    See https://github.com/rosswarren/file-version-bump#configuration for examples.
   `);
 } else {
   P.series(fileBumpConfig.map(globString => () => {
