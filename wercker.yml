@@ -22,6 +22,12 @@ build:
   # Read more about steps on our dev center:
   # http://devcenter.wercker.com/docs/steps/index.html
   steps:
+    - script:
+      name: Configure git
+      code: |-
+        git config --global user.email "rosswarren4@gmail.com"
+        git config --global user.name "rosswarren"
+        
     # A step that executes `npm install` command
     - npm-install
     # A step that executes `npm test` command
