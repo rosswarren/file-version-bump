@@ -18,7 +18,7 @@
   "author": "Ross Warren",
   "license": "ISC",
   "dependencies": {
-    "glob": "7.0.5",
+    "glob": "7.0.6",
     "promalom": "0.3.0"
   },
   "devDependencies": {
