@@ -22,7 +22,7 @@
     "promalom": "0.3.0"
   },
   "devDependencies": {
-    "eslint": "3.3.0",
+    "eslint": "3.5.0",
     "eslint-config-airbnb-base": "5.0.1",
     "eslint-plugin-import": "1.13.0",
     "mocha": "3.0.2",
