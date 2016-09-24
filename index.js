@@ -19,19 +19,19 @@ function runGitAdd(file) {
 const semverRegex = /(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)(?:-[\da-z\-]+(?:\.[\da-z\-]+)*)?(?:\+[\da-z\-]+(?:\.[\da-z\-]+)*)?/ig;
 
 function processGlobString(globString) {
-  return P.promisify(glob)(globString, {}).then(files => {
+  return P.promisify(glob)(globString, {}).then((files) => {
     if (files.length === 0) {
       return null;
     }
 
-    return P.series(files.map(filePath => {
+    return P.series(files.map((filePath) => {
       console.log(`found file ${filePath}`);
 
       return () => P.promisify(fs.readFile)(
         path.join(process.cwd(), filePath),
         'utf8'
-      ).then(fileContents => {
-        fileContents.match(semverRegex).forEach(match => {
+      ).then((fileContents) => {
+        fileContents.match(semverRegex).forEach((match) => {
           console.log(`${match} ==> ${packageJSON.version}`);
         });
 
@@ -39,7 +39,7 @@ function processGlobString(globString) {
           path.join(process.cwd(), filePath),
           fileContents.replace(semverRegex, packageJSON.version)
         ).then(() => runGitAdd(filePath));
-      }).catch(err => {
+      }).catch((err) => {
         console.log(err);
       });
     }));

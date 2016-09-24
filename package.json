@@ -10,7 +10,8 @@
   },
   "scripts": {
     "test": "mocha test",
-    "lint": "eslint index.js test"
+    "lint": "eslint index.js test",
+    "format": "npm run lint -- --fix"
   },
   "pre-commit": [
     "lint"

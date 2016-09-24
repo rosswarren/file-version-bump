@@ -36,7 +36,7 @@ describe('integration', function() {
     .then(() => exec('npm version minor', {
       cwd: path.join(process.cwd(), 'bumptest')
     }))
-    .then(stdout => {
+    .then((stdout) => {
       assert(stdout.indexOf('No file-version-bump config') !== -1);
     })
   );
